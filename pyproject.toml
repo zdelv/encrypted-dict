@@ -1,0 +1,19 @@
+[build-system]
+requires = ["hatchling >= 1.26"]
+build-backend = "hatchling.build"
+
+[project]
+name = "encrypted-dict"
+version = "1.0.0"
+dependencies = [
+	"cryptography~=44.0"
+]
+
+[project.optional-dependencies]
+dev = [
+	"pytest"
+]
+
+[project.scripts]
+encdb = "encrypted_dict.encdb.cli:main"
+
