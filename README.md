@@ -39,6 +39,9 @@ overwriting one if it already exists. `filter` accepts a regex string and can
 filter across keys in the database, writing matches to stdout. `delete` will
 delete a matching key-value from the database
 
+The default location for the encrypted database is `~/.encdb`. This file will
+be created if it does not exist. Use `-f` to specify a different database.
+
 ## Encryption
 
 The database is encrypted with two keys. One key is the data encryption key,
