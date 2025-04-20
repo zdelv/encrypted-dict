@@ -28,7 +28,7 @@ if [ -n "$UNINSTALL" ]; then
   read -p "Uninstall encrypted-dict (located at $DIR)? [y/N]: " USER_INPUT
   if [ -n "$USER_INPUT" ] && [[ $USER_INPUT == [Yy] ]]; then
     rm ~/.local/bin/encdb
-    rm -rf DIR
+    rm -rf $DIR
     exit 1
   else
     echo "Exiting without uninstalling"
@@ -55,7 +55,7 @@ cd $INSTALL_DIR
 python3 -m venv .venv
 .venv/bin/pip install .
 ln -s $(realpath .venv/bin/encdb) ~/.local/bin/encdb
-echo "Installed to /usr/local/encrypted_dict."
-echo "Added symlink to encdb to /usr/local/bin/"
+echo "Installed to ${INSTALL_DIR}"
+echo "Added symlink to encdb to ~/.local/bin/encdb"
 echo ""
 echo "Run encdb to access the db"
